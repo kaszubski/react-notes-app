@@ -1,5 +1,7 @@
 import React from 'react';
 import { withKnobs, select } from '@storybook/addon-knobs';
+import { ThemeProvider } from 'styled-components';
+import { theme } from 'theme/mainTheme';
 import Button from './Button';
 
 export default {
@@ -20,9 +22,11 @@ export const Primary = () => {
   const value = select(label, options, defaultValue, groupID);
 
   return (
-    <Button color={value}>
-      CLICK
-    </Button>
+    <ThemeProvider theme={theme}>
+      <Button color={value}>
+        CLICK
+      </Button>
+    </ThemeProvider>
   );
 };
 
