@@ -8,15 +8,15 @@ import Twitters from 'views/Twitters';
 import Notes from 'views/Notes';
 
 const Root = () => (
-  <MainTemplate>
-    <BrowserRouter>
+  <BrowserRouter>
+    <MainTemplate>
       <Switch>
         <Route exact path="/" component={Notes} />
         <Route path="/articles" component={Articles} />
         <Route path="/twitters" component={Twitters} />
       </Switch>
-    </BrowserRouter>
-  </MainTemplate>
+    </MainTemplate>
+  </BrowserRouter>
 );
 
 export default Root;
