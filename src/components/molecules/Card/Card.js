@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Heading from 'components/atoms/Heading/Heading';
 import Button from 'components/atoms/Button/Button';
+import LinkIcon from 'assets/icons/link.svg';
 
 const StyledWrapper = styled.div`
   min-height: 380px;
@@ -24,9 +25,7 @@ const InnerWrapper = styled.div`
     z-index: 9999;
   }
 
-  ${({ flex }) =>
-    flex &&
-    css`
+  ${({ flex }) => flex && css`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -43,11 +42,25 @@ const StyledHeading = styled(Heading)`
   margin: 5px 0 0;
 `;
 
+const StyledLinkButton = styled.a`
+  display: block;
+  width: 47px;
+  height: 47px;
+  border-radius: 50px;
+  background: white url(${LinkIcon}) no-repeat;
+  background-size: 60%;
+  background-position: 50%;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+`;
+
 const Card = ({ cardType }) => (
   <StyledWrapper>
     <InnerWrapper activeColor={cardType}>
       <StyledHeading>Hello Mordo</StyledHeading>
       <DateInfo>3 days</DateInfo>
+      <StyledLinkButton href="https://youtube.com/" />
     </InnerWrapper>
     <InnerWrapper flex>
       <Paragraph>
